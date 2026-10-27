@@ -1,24 +1,29 @@
 package com.karanjadavid.e_commerce_rest.product.service;
 
+import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaEditService;
 import com.karanjadavid.e_commerce_rest.product.entity.Product;
+import com.karanjadavid.e_commerce_rest.product.form.EditProductForm;
+import com.karanjadavid.e_commerce_rest.product.form.RegisterProductForm;
+import com.karanjadavid.e_commerce_rest.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EditProductService {
+public class ProductEditService extends BaseJpaEditService<Product, ProductRepository> {
 
-    public Product registerProduct(){
+    public Product registerProduct(RegisterProductForm form){
         var product = new Product();
-        product.setName("Looker");
-        return product;
+        product.setName(form.getName());
+        return save(product, form.getSessionUserId());
     }
 
-    public Product editProduct(){
-        var product = new Product("23e", "34");
-        return product;
+    public Product editProduct(String productID, EditProductForm form){
+        var product = findByEntityId(productID);
+        product.setName(form.getName());
+        return save(product, form.getSessionUserId());
     }
 
-    public void deleteProduct(){
-
+    public void deleteProduct(String productId){
+        delete(productId);
     }
 
 }

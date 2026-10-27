@@ -1,4 +1,13 @@
 package com.karanjadavid.e_commerce_rest.category.form;
 
-public class EditCategoryForm {
+import com.karanjadavid.e_commerce_rest.lib.form.SessionUserIdForm;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class EditCategoryForm extends SessionUserIdForm {
+
+    private String name;
+
 }
