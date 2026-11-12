@@ -19,4 +19,6 @@ public class StoreBranch extends BaseJpaEntity {
     @OneToMany
     private List<Inventory> inventories;
 
+    private String imageUrl;
+
 }

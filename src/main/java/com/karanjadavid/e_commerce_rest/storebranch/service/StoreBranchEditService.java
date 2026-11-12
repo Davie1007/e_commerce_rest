@@ -12,16 +12,21 @@ public class StoreBranchEditService extends BaseJpaRepoEditService<StoreBranch, 
 
     public StoreBranch registerStoreBranch(StoreBranchRegistrationForm form){
         var storeBranch = new StoreBranch();
-        storeBranch.setName(form.getName());
+        mapFields(storeBranch, form);
         storeBranch = save(storeBranch, form.getSessionUserId());
         return storeBranch;
     }
 
     public StoreBranch editStoreBranch(String storeId, StoreBranchEditForm form){
         var storeBranch = findByEntityId(storeId);
-        storeBranch.setName(form.getName());
+        mapFields(storeBranch, form);
         storeBranch = save(storeBranch, form.getSessionUserId());
         return storeBranch;
+    }
+
+    private void mapFields(StoreBranch store, StoreBranchEditForm form){
+        store.setName(form.getName());
+        store.setImageUrl(form.getImageUrl());
     }
 
 }

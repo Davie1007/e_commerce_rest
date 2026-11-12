@@ -7,5 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class StoreBranchEditForm extends SessionUserIdForm {
+
     private String name;
+    private String imageUrl;
+
 }

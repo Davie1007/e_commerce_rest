@@ -10,4 +10,6 @@ public class StoreEditForm extends SessionUserIdForm {
 
     private String name;
 
+    private String imageUrl;
+
 }
