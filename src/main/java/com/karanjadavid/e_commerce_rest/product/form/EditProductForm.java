@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 public class EditProductForm extends SessionUserIdForm {
 
-    String name;
+    private String name;
+
+    private String imageUrl;
 
 }

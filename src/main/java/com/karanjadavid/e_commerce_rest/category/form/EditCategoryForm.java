@@ -10,4 +10,6 @@ public class EditCategoryForm extends SessionUserIdForm {
 
     private String name;
 
+    private String imageUrl;
+
 }

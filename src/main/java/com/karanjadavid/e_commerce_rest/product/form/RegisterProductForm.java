@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RegisterProductForm extends SessionUserIdForm {
+public class RegisterProductForm extends EditProductForm {
 
-    String name;
 }

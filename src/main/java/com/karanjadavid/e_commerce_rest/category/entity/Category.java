@@ -12,4 +12,6 @@ public class Category extends BaseJpaEntity {
 
     private String name;
 
+    private String imageUrl;
+
 }
