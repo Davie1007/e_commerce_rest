@@ -10,5 +10,4 @@ import lombok.Setter;
 @Entity
 public class Customer extends SystemUser {
 
-
 }
