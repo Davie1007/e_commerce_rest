@@ -1,5 +1,6 @@
 package com.karanjadavid.e_commerce_rest.lib.view;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
 

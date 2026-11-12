@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -12,6 +15,6 @@ public class Product extends BaseJpaEntity {
 
     private String name;
 
-    private String imageUrl;
+    private List<String> imageUrls = new ArrayList<>();
 
 }

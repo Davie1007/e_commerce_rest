@@ -26,7 +26,12 @@ public class CategoryEditService extends BaseJpaRepoEditService<Category, Catego
 
     private void mapFields(Category category, EditCategoryForm form){
         category.setName(form.getName());
-        category.setImageUrl(form.getImageUrl());
+        for(var imageUrl: form.getImageUrls()){
+            category.getImageUrls().add(imageUrl);
+        }
+        for(var subCategory: form.getSubCategories()){
+            category.addSubcategory(subCategory);
+        }
     }
 
     public void deleteCategory(String entityId){

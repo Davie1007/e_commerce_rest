@@ -1,16 +1,19 @@
 package com.karanjadavid.e_commerce_rest.product.controller;
 
+import com.karanjadavid.e_commerce_rest.lib.service.Message;
+import com.karanjadavid.e_commerce_rest.lib.view.EntityApiResponse;
 import com.karanjadavid.e_commerce_rest.product.entity.Product;
 import com.karanjadavid.e_commerce_rest.product.form.EditProductForm;
 import com.karanjadavid.e_commerce_rest.product.form.RegisterProductForm;
 import com.karanjadavid.e_commerce_rest.product.service.ProductEditService;
 import com.karanjadavid.e_commerce_rest.product.service.ProductReadService;
+import com.karanjadavid.e_commerce_rest.product.view.ProductView;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/products")
@@ -24,14 +27,21 @@ public class ProductController {
     }
 
     @PostMapping("/register")
-    public Product registerProduct(@RequestBody RegisterProductForm form){
-        return productEditService.registerProduct(form);
+    public EntityApiResponse<ProductView> registerProduct(@RequestBody RegisterProductForm form, Locale locale){
+        var product = productEditService.registerProduct(form);
+        return new EntityApiResponse<>(
+                Message.get("product.registration.success", locale),
+                new ProductView(product)
+        );
     }
 
     @PutMapping("/edit/{productId}")
-    public ResponseEntity<Product> editProduct(@PathVariable String productId, @RequestBody EditProductForm form) {
+    public EntityApiResponse<ProductView> editProduct(@PathVariable String productId, @RequestBody EditProductForm form, Locale locale) {
         var product = productEditService.editProduct(productId, form);
-        return ResponseEntity.status(HttpStatus.OK).body(product);
+        return new EntityApiResponse<>(
+                Message.get("product.edit.success", locale),
+                new ProductView(product)
+        );
     }
 
     @DeleteMapping("/delete/{productId}")

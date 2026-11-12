@@ -26,7 +26,9 @@ public class ProductEditService extends BaseJpaRepoEditService<Product, ProductR
 
     public void mapFields(Product product, EditProductForm form){
         product.setName(form.getName());
-        product.setImageUrl(form.getImageUrl());
+        for(var imageUrl: form.getImageUrls()){
+            product.getImageUrls().add(imageUrl);
+        }
     }
 
     public void deleteProduct(String productId){
