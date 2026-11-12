@@ -13,13 +13,15 @@ public class ProductEditService extends BaseJpaRepoEditService<Product, ProductR
     public Product registerProduct(RegisterProductForm form){
         var product = new Product();
         product.setName(form.getName());
-        return save(product, form.getSessionUserId());
+        product =  save(product, form.getSessionUserId());
+        return product;
     }
 
     public Product editProduct(String productID, EditProductForm form){
         var product = findByEntityId(productID);
         product.setName(form.getName());
-        return save(product, form.getSessionUserId());
+        product = save(product, form.getSessionUserId());
+        return product;
     }
 
     public void deleteProduct(String productId){

@@ -17,12 +17,14 @@ public class InventoryEditService extends BaseJpaRepoEditService<Inventory, Inve
     public Inventory registerInventory(InventoryRegistrationForm form){
         var inventory = new Inventory();
         mapFields(inventory, form);
+        inventory = save(inventory, form.getSessionUserId());
         return inventory;
     }
 
     public Inventory editInventory(String inventoryId, InventoryEditForm form){
         var inventory = findByEntityId(inventoryId);
         mapFields(inventory, form);
+        inventory = save(inventory, form.getSessionUserId());
         return inventory;
     }
 

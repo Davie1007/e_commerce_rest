@@ -16,12 +16,14 @@ public class CustomerEditService extends BaseJpaRepoEditService<Customer, Custom
     public Customer registerCustomer(SystemUserRegistrationForm form){
         var customer = new Customer();
         mapper.mapCommonSystemUserFields(customer, form);
+        customer = save(customer, form.getSessionUserId());
         return customer;
     }
 
     public Customer editCustomer(String customerId, SystemUserEditForm form){
         var customer = findByEntityId(customerId);
         mapper.mapCommonSystemUserFields(customer, form);
+        customer = save(customer, form.getSessionUserId());
         return customer;
     }
 

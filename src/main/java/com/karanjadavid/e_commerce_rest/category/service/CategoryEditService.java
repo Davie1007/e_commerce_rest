@@ -13,13 +13,15 @@ public class CategoryEditService extends BaseJpaRepoEditService<Category, Catego
     public Category registerCategory(RegisterCategoryForm form){
         var category = new Category();
         category.setName(form.getName());
-        return save(category, form.getSessionUserId());
+        category = save(category, form.getSessionUserId());
+        return category;
     }
 
     public Category editCategory(String entityId, EditCategoryForm form){
         var category = findByEntityId(entityId);
         category.setName(form.getName());
-        return save(category, form.getSessionUserId());
+        category = save(category, form.getSessionUserId());
+        return category;
     }
 
     public void deleteCategory(String entityId){
