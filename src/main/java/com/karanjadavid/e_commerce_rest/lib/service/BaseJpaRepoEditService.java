@@ -2,14 +2,11 @@ package com.karanjadavid.e_commerce_rest.lib.service;
 
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
 import com.karanjadavid.e_commerce_rest.lib.repository.BaseJpaRepository;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
-public abstract class BaseJpaEditService<T extends BaseJpaEntity, R extends BaseJpaRepository<T>> extends BaseJpaReadService<T, R> {
+public abstract class BaseJpaRepoEditService<T extends BaseJpaEntity, R extends BaseJpaRepository<T>> extends BaseJpaRepoReadService<T, R> {
 
     public List<T> save(List<T> models, String updatedBy){
         for(var model: models){

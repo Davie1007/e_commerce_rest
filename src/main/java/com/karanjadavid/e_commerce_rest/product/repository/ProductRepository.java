@@ -1,4 +1,4 @@
-package com.karanjadavid.e_commerce_rest.repository;
+package com.karanjadavid.e_commerce_rest.product.repository;
 
 import com.karanjadavid.e_commerce_rest.lib.repository.BaseJpaRepository;
 import com.karanjadavid.e_commerce_rest.product.entity.Product;

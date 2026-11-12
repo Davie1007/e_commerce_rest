@@ -12,8 +12,4 @@ public class Product extends BaseJpaEntity {
 
     private String name;
 
-    public Product() {
-        
-    }
-
 }

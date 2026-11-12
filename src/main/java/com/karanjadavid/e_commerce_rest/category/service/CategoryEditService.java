@@ -4,11 +4,11 @@ import com.karanjadavid.e_commerce_rest.category.entity.Category;
 import com.karanjadavid.e_commerce_rest.category.form.EditCategoryForm;
 import com.karanjadavid.e_commerce_rest.category.form.RegisterCategoryForm;
 import com.karanjadavid.e_commerce_rest.category.repository.CategoryRepository;
-import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaEditService;
+import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaRepoEditService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CategoryEditService extends BaseJpaEditService<Category, CategoryRepository> {
+public class CategoryEditService extends BaseJpaRepoEditService<Category, CategoryRepository> {
 
     public Category registerCategory(RegisterCategoryForm form){
         var category = new Category();

@@ -1,14 +1,14 @@
 package com.karanjadavid.e_commerce_rest.product.service;
 
-import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaEditService;
+import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaRepoEditService;
 import com.karanjadavid.e_commerce_rest.product.entity.Product;
 import com.karanjadavid.e_commerce_rest.product.form.EditProductForm;
 import com.karanjadavid.e_commerce_rest.product.form.RegisterProductForm;
-import com.karanjadavid.e_commerce_rest.repository.ProductRepository;
+import com.karanjadavid.e_commerce_rest.product.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductEditService extends BaseJpaEditService<Product, ProductRepository> {
+public class ProductEditService extends BaseJpaRepoEditService<Product, ProductRepository> {
 
     public Product registerProduct(RegisterProductForm form){
         var product = new Product();

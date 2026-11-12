@@ -10,7 +10,7 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseJpaReadService<T extends BaseJpaEntity, R extends BaseJpaRepository<T>> {
+public abstract class BaseJpaRepoReadService<T extends BaseJpaEntity, R extends BaseJpaRepository<T>> {
 
     protected R repository;
 
