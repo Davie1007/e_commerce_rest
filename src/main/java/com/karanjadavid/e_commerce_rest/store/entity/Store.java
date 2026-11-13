@@ -16,9 +16,13 @@ public class Store extends BaseJpaEntity {
 
     private String name;
 
+    private String logoUrl;
+
     @OneToMany
     private List<StoreBranch> branches;
 
     private String imageUrl;
+
+    private List<String> bannerImagesUrls;
 
 }

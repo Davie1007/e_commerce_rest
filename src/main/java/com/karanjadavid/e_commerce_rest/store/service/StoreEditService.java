@@ -26,7 +26,11 @@ public class StoreEditService extends BaseJpaRepoEditService<Store, StoreReposit
 
     private void mapFields(Store store, StoreEditForm form){
         store.setName(form.getName());
+        store.setLogoUrl(form.getLogoUrl());
         store.setImageUrl(form.getImageUrl());
+        for(var bannerImage: form.getBannerImagesUrls()){
+            store.getBannerImagesUrls().add(bannerImage);
+        }
     }
 
 }
