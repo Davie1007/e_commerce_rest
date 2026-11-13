@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerEditService extends BaseJpaRepoEditService<Customer, CustomerRepository> {
 
-    private CommonSystemUserFieldsMapper mapper = new CommonSystemUserFieldsMapper();
+    private final CommonSystemUserFieldsMapper mapper = new CommonSystemUserFieldsMapper();
 
     public Customer registerCustomer(SystemUserRegistrationForm form){
         var customer = new Customer();
