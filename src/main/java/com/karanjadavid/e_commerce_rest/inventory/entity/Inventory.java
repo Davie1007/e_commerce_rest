@@ -14,6 +14,7 @@ public class Inventory extends BaseJpaEntity {
 
     @OneToOne
     private Product product;
+
     private int count;
 
 }
