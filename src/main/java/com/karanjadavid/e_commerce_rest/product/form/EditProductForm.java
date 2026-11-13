@@ -4,6 +4,7 @@ import com.karanjadavid.e_commerce_rest.lib.form.SessionUserIdForm;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -11,6 +12,8 @@ import java.util.List;
 public class EditProductForm extends SessionUserIdForm {
 
     private String name;
+
+    private BigDecimal price;
 
     private List<String> imageUrls;
 

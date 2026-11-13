@@ -8,7 +8,6 @@ import com.karanjadavid.e_commerce_rest.category.service.CategoryReadService;
 import com.karanjadavid.e_commerce_rest.category.view.CategoryView;
 import com.karanjadavid.e_commerce_rest.lib.service.Message;
 import com.karanjadavid.e_commerce_rest.lib.view.EntityApiResponse;
-import com.karanjadavid.e_commerce_rest.product.view.ProductView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

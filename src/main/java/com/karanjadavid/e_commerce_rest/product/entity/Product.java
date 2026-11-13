@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
 public class Product extends BaseJpaEntity {
 
     private String name;
+
+    private BigDecimal price;
 
     private List<String> imageUrls = new ArrayList<>();
 
