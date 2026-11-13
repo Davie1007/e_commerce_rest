@@ -14,6 +14,7 @@ public class SaleOrderItem extends BaseJpaEntity {
 
     @OneToOne
     private Product product;
+
     private int quantity;
 
 }
