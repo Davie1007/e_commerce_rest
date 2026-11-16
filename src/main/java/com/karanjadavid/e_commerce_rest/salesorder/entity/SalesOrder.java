@@ -1,6 +1,7 @@
 package com.karanjadavid.e_commerce_rest.salesorder.entity;
 
 import com.karanjadavid.e_commerce_rest.customer.entity.Customer;
+import com.karanjadavid.e_commerce_rest.lib.entity.Address;
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,5 +22,7 @@ public class SalesOrder extends BaseJpaEntity {
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<SaleOrderItem> saleOrderItems;
+
+    private Address address;
 
 }
