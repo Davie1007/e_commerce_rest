@@ -1,6 +1,7 @@
 package com.karanjadavid.e_commerce_rest.storebranch.entity;
 
 import com.karanjadavid.e_commerce_rest.inventory.entity.Inventory;
+import com.karanjadavid.e_commerce_rest.lib.entity.Address;
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -20,5 +21,7 @@ public class StoreBranch extends BaseJpaEntity {
     private List<Inventory> inventories;
 
     private String imageUrl;
+
+    private Address address;
 
 }

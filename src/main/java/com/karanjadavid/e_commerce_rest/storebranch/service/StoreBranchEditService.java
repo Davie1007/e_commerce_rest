@@ -27,6 +27,7 @@ public class StoreBranchEditService extends BaseJpaRepoEditService<StoreBranch, 
     private void mapFields(StoreBranch store, StoreBranchEditForm form){
         store.setName(form.getName());
         store.setImageUrl(form.getImageUrl());
+        store.setAddress(form.getAddress());
     }
 
 }
