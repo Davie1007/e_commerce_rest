@@ -1,6 +1,7 @@
 package com.karanjadavid.e_commerce_rest.product.view;
 
 import com.karanjadavid.e_commerce_rest.lib.view.BaseView;
+import com.karanjadavid.e_commerce_rest.manufacturer.entity.Manufacturer;
 import com.karanjadavid.e_commerce_rest.product.entity.Product;
 
 import java.math.BigDecimal;
@@ -16,5 +17,9 @@ public class ProductView extends BaseView<Product> {
     public BigDecimal getPrice(){ return entity.getPrice(); }
 
     public List<String> getImageUrls(){ return entity.getImageUrls(); }
+
+    public Manufacturer getManufacturer(){ return entity.getManufacturer(); }
+
+    public double getMinimumOrderQuantity(){ return entity.getMinimumOrderQuantity(); }
 
 }
