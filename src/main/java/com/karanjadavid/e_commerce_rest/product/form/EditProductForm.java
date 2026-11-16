@@ -17,4 +17,6 @@ public class EditProductForm extends SessionUserIdForm {
 
     private List<String> imageUrls;
 
+    private String manufacturerEntityId;
+
 }
