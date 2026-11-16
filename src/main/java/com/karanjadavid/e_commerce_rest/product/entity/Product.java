@@ -25,4 +25,6 @@ public class Product extends BaseJpaEntity {
     @OneToOne
     private Manufacturer manufacturer;
 
+    private double minimumOrderQuantity;
+
 }

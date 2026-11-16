@@ -36,6 +36,7 @@ public class ProductEditService extends BaseJpaRepoEditService<Product, ProductR
             product.getImageUrls().add(imageUrl);
         }
         product.setManufacturer(manufacturer);
+        product.setMinimumOrderQuantity(form.getMinimumOrderQuantity());
     }
 
     public void deleteProduct(String productId){

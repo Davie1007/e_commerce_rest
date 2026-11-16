@@ -19,4 +19,6 @@ public class EditProductForm extends SessionUserIdForm {
 
     private String manufacturerEntityId;
 
+    private double minimumOrderQuantity;
+
 }
