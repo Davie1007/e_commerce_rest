@@ -29,6 +29,7 @@ public class SaleOrderItemEditService extends BaseJpaRepoEditService<SaleOrderIt
     private void mapFields(SaleOrderItem item, SaleOrderItemEditForm form){
         var product = productReadService.findByEntityId(form.getProductEntityId());
         item.setProduct(product);
+        item.setPrice(product.getPrice());
         item.setQuantity(form.getQuantity());
     }
 
