@@ -1,5 +1,6 @@
 package com.karanjadavid.e_commerce_rest.salesorder.form;
 
+import com.karanjadavid.e_commerce_rest.lib.entity.Address;
 import com.karanjadavid.e_commerce_rest.lib.form.SessionUserIdForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,5 +10,7 @@ import lombok.Setter;
 public class SalesOrderEditForm extends SessionUserIdForm {
 
     private String customerEntityId;
+
+    private Address address;
 
 }

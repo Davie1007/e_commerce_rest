@@ -30,6 +30,7 @@ public class ManufacturerEditService extends BaseJpaRepoEditService<Manufacturer
 
     private void mapFields(Manufacturer manufacturer, ManufacturerEditForm form){
         manufacturer.setName(form.getName());
+        manufacturer.setAddress(form.getAddress());
     }
 
 }

@@ -31,6 +31,7 @@ public class SalesOrderEditService extends BaseJpaRepoEditService<SalesOrder, Sa
     private void mapFields(SalesOrder salesOrder, SalesOrderEditForm form){
         var customer = customerReadService.findByEntityId(form.getCustomerEntityId());
         salesOrder.setCustomer(customer);
+        salesOrder.setAddress(form.getAddress());
     }
 
     @Autowired
