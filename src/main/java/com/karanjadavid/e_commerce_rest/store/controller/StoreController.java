@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Locale;
 
 @RestController
-@RequestMapping("/store")
+@RequestMapping("/stores")
 public class StoreController {
 
     private StoreEditService storeEditService;

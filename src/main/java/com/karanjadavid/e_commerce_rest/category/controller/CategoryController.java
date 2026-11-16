@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Locale;
 
 @RestController
+@RequestMapping("/categories")
 public class CategoryController {
 
     private CategoryEditService categoryEditService;

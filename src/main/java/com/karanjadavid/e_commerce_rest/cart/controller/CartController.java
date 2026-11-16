@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Locale;
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("/carts")
 public class CartController {
 
     private CartEditService cartEditService;
