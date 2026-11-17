@@ -17,17 +17,26 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+    private static final String[] PUBLIC_URLS = {
+            "/customers/register",
+            "/products/list",
+            "/sales-orders/list",
+    };
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(customizer -> customizer.disable());
+
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/customers/register", "/error").permitAll()
+                .requestMatchers(PUBLIC_URLS).permitAll()
                 .anyRequest().authenticated()
         );
+
         http.httpBasic(Customizer.withDefaults());
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

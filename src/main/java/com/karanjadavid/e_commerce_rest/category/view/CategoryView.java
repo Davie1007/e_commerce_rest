@@ -13,5 +13,5 @@ public class CategoryView extends BaseView<Category> {
     public String getName(){ return entity.getName(); }
     public List<String> getImageUrls(){ return entity.getImageUrls(); }
     public Category getParent(){ return entity.getParent(); }
-    public List<Category> subCategories(){ return entity.getSubCategories(); }
+    public List<Category> getSubCategories(){ return entity.getSubCategories(); }
 }

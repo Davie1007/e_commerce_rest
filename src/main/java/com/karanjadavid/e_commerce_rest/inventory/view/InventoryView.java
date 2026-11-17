@@ -8,8 +8,8 @@ public class InventoryView extends BaseView<Inventory> {
         super(entity);
     }
 
-    public String productName(){ return  entity.getProduct().getName(); }
+    public String getProductName(){ return  entity.getProduct().getName(); }
 
-    public int count(){ return entity.getCount(); }
+    public int getCount(){ return entity.getCount(); }
 
 }

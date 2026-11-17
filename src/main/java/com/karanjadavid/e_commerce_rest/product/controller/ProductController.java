@@ -1,8 +1,9 @@
 package com.karanjadavid.e_commerce_rest.product.controller;
 
+import com.karanjadavid.e_commerce_rest.lib.form.BaseFetchForm;
 import com.karanjadavid.e_commerce_rest.lib.service.Message;
 import com.karanjadavid.e_commerce_rest.lib.view.EntityApiResponse;
-import com.karanjadavid.e_commerce_rest.product.entity.Product;
+import com.karanjadavid.e_commerce_rest.lib.view.PagedEntityApiResponse;
 import com.karanjadavid.e_commerce_rest.product.form.EditProductForm;
 import com.karanjadavid.e_commerce_rest.product.form.RegisterProductForm;
 import com.karanjadavid.e_commerce_rest.product.service.ProductEditService;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Locale;
 
 @RestController
@@ -21,9 +21,20 @@ public class ProductController {
     private ProductEditService productEditService;
     private ProductReadService productReadService;
 
-    @GetMapping("/list")
-    public List<Product> getProducts(){
-        return productReadService.getAllProducts();
+    @GetMapping("list")
+    public PagedEntityApiResponse<ProductView> list(
+            @RequestParam(name="query", required = false)String query,
+            @RequestParam(name="pageNum", required = false, defaultValue = "0") Integer pageNum,
+            @RequestParam(name="pageSize", required = false, defaultValue = "100") Integer pageSize
+    ){
+        var form = new BaseFetchForm();
+        form.setQuery(query);
+        form.setPageNum(pageNum);
+        form.setPageSize(pageSize);
+
+        var page = productReadService.listProducts(form);
+        var views = page.getContent().stream().map(ProductView::new).toList();
+        return new PagedEntityApiResponse<>(page, views);
     }
 
     @PostMapping("/register")

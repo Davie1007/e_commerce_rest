@@ -7,4 +7,8 @@ public class SystemUserView extends BaseView<SystemUser> {
     public SystemUserView(SystemUser entity) {
         super(entity);
     }
+
+    public String getName(){ return entity.getName(); }
+    public String getEmail(){ return entity.getEmail(); }
+    public String getPhoneNumber(){ return entity.getPhoneNumber(); }
 }
