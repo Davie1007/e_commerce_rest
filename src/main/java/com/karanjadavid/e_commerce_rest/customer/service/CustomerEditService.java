@@ -3,28 +3,21 @@ package com.karanjadavid.e_commerce_rest.customer.service;
 import com.karanjadavid.e_commerce_rest.customer.entity.Customer;
 import com.karanjadavid.e_commerce_rest.customer.repository.CustomerRepository;
 import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaRepoEditService;
+import com.karanjadavid.e_commerce_rest.systemuser.entity.SystemUser;
 import com.karanjadavid.e_commerce_rest.systemuser.form.SystemUserEditForm;
 import com.karanjadavid.e_commerce_rest.systemuser.form.SystemUserRegistrationForm;
-import com.karanjadavid.e_commerce_rest.systemuser.service.CommonSystemUserFieldsMapper;
+import com.karanjadavid.e_commerce_rest.systemuser.service.SystemUserEditService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerEditService extends BaseJpaRepoEditService<Customer, CustomerRepository> {
 
-    private final CommonSystemUserFieldsMapper mapper = new CommonSystemUserFieldsMapper();
+    private SystemUserEditService systemUserEditService;
 
-    public Customer registerCustomer(SystemUserRegistrationForm form){
-        var customer = new Customer();
-        mapper.mapCommonSystemUserFields(customer, form);
-        customer = save(customer, form.getSessionUserId());
-        return customer;
-    }
-
-    public Customer editCustomer(String customerId, SystemUserEditForm form){
-        var customer = findByEntityId(customerId);
-        mapper.mapCommonSystemUserFields(customer, form);
-        customer = save(customer, form.getSessionUserId());
-        return customer;
+    @Autowired
+    public void setSystemUserEditService(SystemUserEditService service){
+        this.systemUserEditService = service;
     }
 
 }

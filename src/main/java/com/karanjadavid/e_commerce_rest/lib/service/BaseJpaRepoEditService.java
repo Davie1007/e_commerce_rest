@@ -26,6 +26,12 @@ public abstract class BaseJpaRepoEditService<T extends BaseJpaEntity, R extends 
         return repository.save(model);
     }
 
+    public T save(T model){
+        model.setCreatedAt(LocalDateTime.now());
+        model.setUpdatedAt(LocalDateTime.now());
+        return repository.save(model);
+    }
+
     public void delete(String entityId) {
         T model = findByEntityId(entityId);
 
