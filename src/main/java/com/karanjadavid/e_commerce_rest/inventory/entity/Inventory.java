@@ -17,4 +17,12 @@ public class Inventory extends BaseJpaEntity {
 
     private int count;
 
+    private double sold;
+
+    private double minimumOrderQuantity;
+
+    private String minimumOrderQuantityUnit;
+
+    private short rating;
+
 }
