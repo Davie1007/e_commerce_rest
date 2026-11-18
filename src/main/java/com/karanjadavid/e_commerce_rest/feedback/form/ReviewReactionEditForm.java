@@ -1,7 +1,7 @@
-package com.karanjadavid.e_commerce_rest.review.form;
+package com.karanjadavid.e_commerce_rest.feedback.form;
 
 import com.karanjadavid.e_commerce_rest.lib.form.SessionUserIdForm;
-import com.karanjadavid.e_commerce_rest.review.entity.ReactionType;
+import com.karanjadavid.e_commerce_rest.feedback.entity.ReactionType;
 import lombok.Getter;
 import lombok.Setter;
 

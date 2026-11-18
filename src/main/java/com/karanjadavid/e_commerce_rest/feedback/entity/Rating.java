@@ -1,4 +1,4 @@
-package com.karanjadavid.e_commerce_rest.review.entity;
+package com.karanjadavid.e_commerce_rest.feedback.entity;
 
 import com.karanjadavid.e_commerce_rest.customer.entity.Customer;
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;

@@ -1,11 +1,11 @@
-package com.karanjadavid.e_commerce_rest.review.service;
+package com.karanjadavid.e_commerce_rest.feedback.service;
 
 import com.karanjadavid.e_commerce_rest.customer.service.CustomerReadService;
 import com.karanjadavid.e_commerce_rest.lib.service.BaseJpaRepoEditService;
-import com.karanjadavid.e_commerce_rest.review.entity.ReviewReaction;
-import com.karanjadavid.e_commerce_rest.review.form.ReviewReactionEditForm;
-import com.karanjadavid.e_commerce_rest.review.form.ReviewReactionRegistrationForm;
-import com.karanjadavid.e_commerce_rest.review.repository.ReviewReactionRepository;
+import com.karanjadavid.e_commerce_rest.feedback.entity.ReviewReaction;
+import com.karanjadavid.e_commerce_rest.feedback.form.ReviewReactionEditForm;
+import com.karanjadavid.e_commerce_rest.feedback.form.ReviewReactionRegistrationForm;
+import com.karanjadavid.e_commerce_rest.feedback.repository.ReviewReactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

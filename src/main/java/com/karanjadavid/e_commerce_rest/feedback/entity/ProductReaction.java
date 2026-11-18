@@ -1,7 +1,8 @@
-package com.karanjadavid.e_commerce_rest.review.entity;
+package com.karanjadavid.e_commerce_rest.feedback.entity;
 
 import com.karanjadavid.e_commerce_rest.customer.entity.Customer;
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
+import com.karanjadavid.e_commerce_rest.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,14 +10,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class ReviewReaction extends BaseJpaEntity {
+public class ProductReaction extends BaseJpaEntity {
 
     @ManyToOne
-    private Review review;
+    private Product product;
 
     @OneToOne
     private Customer customer;
 
     @Enumerated(EnumType.STRING)
     private ReactionType reactionType;
+
 }

@@ -1,7 +1,7 @@
-package com.karanjadavid.e_commerce_rest.review.repository;
+package com.karanjadavid.e_commerce_rest.feedback.repository;
 
 import com.karanjadavid.e_commerce_rest.lib.repository.BaseJpaRepository;
-import com.karanjadavid.e_commerce_rest.review.entity.ReviewReaction;
+import com.karanjadavid.e_commerce_rest.feedback.entity.ReviewReaction;
 import org.springframework.stereotype.Repository;
 
 @Repository

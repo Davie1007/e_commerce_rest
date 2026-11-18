@@ -2,9 +2,7 @@ package com.karanjadavid.e_commerce_rest.product.entity;
 
 import com.karanjadavid.e_commerce_rest.lib.entity.BaseJpaEntity;
 import com.karanjadavid.e_commerce_rest.manufacturer.entity.Manufacturer;
-import com.karanjadavid.e_commerce_rest.review.entity.Review;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.karanjadavid.e_commerce_rest.review.form;
+package com.karanjadavid.e_commerce_rest.feedback.form;
 
 import com.karanjadavid.e_commerce_rest.lib.form.SessionUserIdForm;
 import lombok.Getter;
