@@ -20,6 +20,4 @@ public class ProductView extends BaseView<Product> {
 
     public Manufacturer getManufacturer(){ return entity.getManufacturer(); }
 
-    public double getMinimumOrderQuantity(){ return entity.getMinimumOrderQuantity(); }
-
 }
