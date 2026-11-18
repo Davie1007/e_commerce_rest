@@ -35,6 +35,10 @@ public class ProductEditService extends BaseJpaRepoEditService<Product, ProductR
         for(var imageUrl: form.getImageUrls()){
             product.getImageUrls().add(imageUrl);
         }
+        if (form.getFeatures() != null) {
+            product.getFeatures().clear();
+            product.getFeatures().putAll(form.getFeatures());
+        }
         product.setManufacturer(manufacturer);
     }
 

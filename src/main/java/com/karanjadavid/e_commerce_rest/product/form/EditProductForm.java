@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -17,8 +19,8 @@ public class EditProductForm extends SessionUserIdForm {
 
     private List<String> imageUrls;
 
-    private String manufacturerEntityId;
+    private Map<String, String> features = new HashMap<>();
 
-    private double minimumOrderQuantity;
+    private String manufacturerEntityId;
 
 }
